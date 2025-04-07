@@ -64,3 +64,10 @@ Desarrolla una aplicación de línea de comandos (CLI) que procese un archivo CS
 6. **Documentación y Calidad del Código:**
    - Código bien documentado y fácil de leer.
    - Comentarios explicando pasos clave y lógica del programa.
+
+## Requirements:
+* Node 14+
+## Use:
+* Install dependency with command: ```npm i```
+* Start CLI program: ```npm start```
+
