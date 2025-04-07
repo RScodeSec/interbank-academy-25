@@ -64,10 +64,30 @@ Desarrolla una aplicación de línea de comandos (CLI) que procese un archivo CS
 6. **Documentación y Calidad del Código:**
    - Código bien documentado y fácil de leer.
    - Comentarios explicando pasos clave y lógica del programa.
-
+---------------------------------------------------
+## Introducción
+El reto es un programa de comando interactivo que procesa archivo en formato cvs 
+y como salida se obtiene un un resumen, y como tiene como proposito analizar los requerimentos, y mediante logica resolver.  
 ## Requirements:
 * Node 14+
 ## Use:
 * Install dependency with command: ```npm i```
 * Start CLI program: ```npm start```
+## Enfoque y Solución
+* Lectura: Se usó lectura por partes (chunk) para optimizar uso de recursos, y se formateo cada row a JSON utilizando dependencia csv-parser
+para acceder a la informacion de la transaccion.
+* Logica: Se usó funciones para cada requerimiento con clausulas condicionales, para validar y resolver el requerimiento.
+En cuanto a enfoque de solucion de separó en funciones para hacer uso de: Single responsibility principle y en diferentes archibos con un nombre de dominio.
+## Estructura del Proyecto:
+````
+.
+├── src/                     # Codigo fuente
+│   ├── model/               # Contantes de dominio
+│   └── accountingService.js   # Servicio de contabilidad(balance)
+│   └── transactionService.js  # Servicio de transaccion(numero de movimientos, mayor monto)
+├── index.js                 # Entrada principal de la aplicación
+├── data.csv                 # Data de transacciones
+├── command.js               # CLI interactivo
+├── package.json             # Manifest del proyecto
+└── README.md                # 
 

@@ -47,9 +47,7 @@ function generateReport() {
     fs.createReadStream(`${__dirname}/data.csv`, "utf-8")
         .pipe(csv())
         .on("data", (row) => {
-            finalBalance = updateBalance(row, finalBalance);
-            numberTransactions = countNumberTransaction(row, numberTransactions);
-            higherAmountTransaction = getTransactionHigherAmount(row, higherAmountTransaction);
+            processTransaction(row);
         })
         .on("error", (err) => {
             console.error(`OPERATION ERROR]  ${err.message}`);
@@ -57,6 +55,12 @@ function generateReport() {
         .on("end", () => {
             console.log(buildSummary());
         });
+}
+
+function processTransaction(transaction) {
+    finalBalance = updateBalance(transaction, finalBalance);
+    numberTransactions = countNumberTransaction(transaction, numberTransactions);
+    higherAmountTransaction = getTransactionHigherAmount(transaction, higherAmountTransaction);
 }
 
 function buildSummary() {
